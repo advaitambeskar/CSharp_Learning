@@ -56,6 +56,48 @@ namespace ConsoleApp1
             {
                 Console.WriteLine("UNDERAGE!! FELONY!!");
             }
+            Console.WriteLine("\nLet us try the Switch Case now!");
+            int num = 10;
+            switch (num)
+            {
+                case 1:
+                    Console.WriteLine("The num is {0}", num);
+                    break;
+                case 10:
+                    Console.WriteLine("The num is {0}", num);
+                    break;
+                case 3:
+                    Console.WriteLine("The num is {0}", num);
+                    break;
+                default:
+                    Console.WriteLine("Your num is not found!");
+                    break;
+            }
+
+            Console.WriteLine("Now! While Loop!");
+            num = 1;
+            while (num < 6)
+            {
+                Console.WriteLine("{0} now!", num);
+                num++;
+            }
+
+            Console.WriteLine("\nIt is now time for loop! :P\n");
+            num = 1;
+            int sum = 0;
+            for (num = 0; num < 100; num++)
+            {
+                sum = sum + num;
+            }
+            Console.WriteLine("The Sum is {0}", sum);
+            Console.WriteLine("\n\nNow it is time for some do-while!\n");
+            num = 1;
+            do
+            {
+                Console.WriteLine("{0}", num);
+                num = num + 2;
+            } while (num < 10);
+
         }
     }
 }

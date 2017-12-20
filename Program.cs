@@ -6,8 +6,50 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
+    class Person
+    {
+        int age;
+        string name;
+        public void SayHi()
+        {
+            Console.WriteLine("Hi!");
+        }
+    }
+    class Dog
+    {
+        public string name;
+        public int age;
+        public double age_Human;
+        public double DogAgeToHumanAge(int Dog_Age)
+        {
+            double HumanAge = 0;
+            if (Dog_Age > 2)
+            {
+                for (int i = Dog_Age; i > 0; i--)
+                {
+                    if (i <= 2)
+                    {
+                        HumanAge = HumanAge + 10.5;
+                    }
+                    else
+                    {
+                        HumanAge = HumanAge + 4;
+                    }
+                }
+            }
+            else
+            {
+                for (int i = Dog_Age; i > 0; i--)
+                {
+                    HumanAge = HumanAge + 10.5;
+                }
+            }
+            return HumanAge;
+        }
+    }
     class Program
     {
+        /*
         static void Main(string[] args)
         {
             //Module 1
@@ -32,6 +74,7 @@ namespace ConsoleApp1
             //Console.WriteLine("The value of Pi is {0}", Pi);
             //Module 1 ends here
             */
+            /*
             Console.WriteLine("Module 1 ends here, Module 2 begins");
             //Module 2
             /*
@@ -149,7 +192,7 @@ namespace ConsoleApp1
                 transaction++;
             } while (transaction < 12);
         }
-        */
+        
             //Module 2 ends here
             Console.WriteLine("Module 2 ends here, Module 3 begins");
             // Module 3
@@ -230,6 +273,21 @@ namespace ConsoleApp1
                 }
                 Console.WriteLine();
             }
+        }
+        //Module 3 ends
+        //Module 4 starts
+        */
+        static void Main(string[] args)
+        {
+            Person p1 = new Person();
+            p1.SayHi();
+            Dog d1 = new Dog();
+            Console.WriteLine("What is your dog's name?");
+            d1.name = Console.ReadLine();
+            Console.WriteLine("How old is {0}",d1.name);
+            d1.age = Convert.ToInt32(Console.ReadLine());
+            d1.age_Human = d1.DogAgeToHumanAge(d1.age);
+            Console.WriteLine("{0} is {1} in human years.", d1.name, d1.age_Human);
         }
     }
 }

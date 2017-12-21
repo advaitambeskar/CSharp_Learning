@@ -71,14 +71,14 @@ namespace ConsoleApp1
              * protected internal : Discussed Later
              */
             Bank b1 = new Bank();
-            Console.WriteLine("{0}",b1.accountHolderName);
+            Console.WriteLine("{0}",b1.Name);
             Console.WriteLine("{0}",b1.accountNumber);
             Console.WriteLine("{0}",b1.ShowBalance());
-            b1.accountHolderName = p1.name;
+            b1.Name = p1.name;
             b1.Deposit(11000.222);
             b1.Withdraw(212.212);
             double balance = b1.ShowBalance();
-            Console.WriteLine("{0}", b1.accountHolderName);
+            Console.WriteLine("{0}", b1.Name);
             Console.WriteLine("{0}", b1.accountNumber);
             Console.WriteLine("{0}", b1.ShowBalance());
             Console.WriteLine("You have {0} in your account", balance);
@@ -88,13 +88,16 @@ namespace ConsoleApp1
              * each time an object is created.
              * Maybe the first time a 'bank account' is created, you need
              * to send an email to the person whose account it is, etc.
-             */ 
+             */
+            Bank b2 = new Bank();
+            b2.Name = "Bob";
+            Console.WriteLine(b2.Name);
 
         }
     }
     class Bank
     {
-        public string accountHolderName;
+        private string accountHolderName;
         private double balance = 0;
         public int accountNumber;
         public Bank()
@@ -102,6 +105,11 @@ namespace ConsoleApp1
             balance = 0;
             accountHolderName = "";
             accountNumber = 1234567890;
+        }
+        public string Name
+        {
+            get { return accountHolderName; }
+            set { accountHolderName = value; }
         }
         public void Deposit(double money)
         {
@@ -116,6 +124,8 @@ namespace ConsoleApp1
         {
             return balance;
         }
+        //Now let us check something called class properties
+        //Properties use accessors like - get and set to assign values to a private member of the class
     }
 }
 
